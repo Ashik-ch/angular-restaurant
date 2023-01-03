@@ -1,0 +1,183 @@
+                                             Angular
+
+                                    Bank App In Angular
+
+                            Front end: Angular
+                            Backend :Nodejs(Express)
+                            DataBase:MongoDb
+                        
+                Basic Building Blocks
+        1 Module -To import 3rd party libraries  - root module - Appmodule
+        2 Component - To create html css and javascript. html,css,ts
+
+                Basic Commands
+        1 Create a project      - ng new project_name
+        2 Create a Component    - ng g c component_name
+        3 run                   - ng serve --open
+        4 Create a Services     - ng g s service_name
+
+
+    I] Data Binding     (To share data inside the component)
+        TS = component &  html = view
+
+        1) One way data binding  =>  Data share in unidirections ts -› html or html -› ts file
+
+            a)Component to view
+                a.1) String interpolation  - {{variableName]}                     (navbar title)
+                a.2) Property binding      - [attribute_name]= "property"         (placeholder text)
+        
+            b) View to Component 
+                b.1)Event binding               - (event_name)="function name"           { (click)=login() }
+                b.2)Event binding using Sevent  - (event_name)="function name ($event)          // iput text in alert 
+                b.3)Event binding using template referencing variable - #variable_name          // ',',    
+
+        2) Two way binding =>  Data share in both directions (ts-›html and html -› ts)
+
+                1) [(ngModel)] (is library) -          FormsModule => import in (app.modul.ts-imports)
+        
+                2) Angular Forms
+
+                    a) Template Driven Forms (designing in html page)
+
+                    b) Model Driven Forms  (define in filemodel , design -> html page)
+
+                        b.1)Reactive Forms   ( mainly for adavance validation)
+                            formGroup, formArray, FormControl
+                                
+                                -import ReactiveFormsModule in app.mdl.ts and add FormBuilder in constructor
+                                -create formGroup Model and  formArray as variable
+                        
+                        eg:- registerForm = this.fb.group({            //form grp
+                                regname: ['',[Validators.required, Validators.pattern('[a-zA-Z]*')]],...       //formArray  
+
+                                <form [formGroup]="registerForm">
+                                    <input placeholder="Password" formControlName="passwrd">
+                                        <div *ngIf="this.registerForm.get('regname')?.errors&&this.registerForm.get('regname')?.touched">Inavlid</div>
+
+
+       
+    II] Angular Routing
+        
+        Path Setting  in app.routing.ts -> Routes = [{ path:"", component: LoginComponent},{} ]
+        and <router-outlet> in app.html
+
+
+    III] Dependency injection - to share data between two components/class        //(eg:- login to DataService)
+
+        constructor(private ds: DataService) {  }
+
+
+    IV] Angular Services  - To hold redudent data
+
+
+    V] Angular Directives - To manipulate the DOM Elements
+        
+        a) Component Directives
+
+        b) Structural Directives (eg:table Structure)  
+            1. *ngFor           *ngFor="let t of RestList           {{t.name}}
+            2. *ngIf
+            3. *ngSwitch
+
+            ngclass - Attribute directives- to apply set of style to html
+                inbuilt
+				userdefined
+                
+            ngSubmit - to submit the entire form
+
+
+
+
+    VI] Asyncronus - rxjs module - observable - subscribe method () - (resolve,reject)
+
+
+     VI] HttpClientModule - To use Http request(put,get,post...)
+            import HttpClientModule (ap.mdl.ts)     //API Call
+                        AllList() {
+                            return this.http.get('http://localhost:3000/restaurants')   }
+ 
+
+    VII] ActivatedRoute : access to information about specFific item - dpndInjct
+
+                ViewItem(RestId: any) {                     //(serv.ts)
+                        return this.http.get('http://localhost:3000/restaurants/' + RestId)  }
+
+                // activateRoute for specific item display  //(.ts)
+                this.ActRoute.params
+                .subscribe((data) => {
+                    this.RestId = data['id']                      })
+
+
+
+
+
+    LocalStorage
+
+        setItem         localStorage.setItem('CurrentAcno', JSON.stringify(this.currentacno))
+
+        getItem         this.currentacno = JSON.parse(localStorage.getItem('CurrentAcno') || "");
+        
+        removeItem      localStorage.removeItem('currentacno')
+
+
+
+
+
+
+
+    To avoid backing into web
+        ngOnInit(): void { 
+            if(!localStorage.getItem("CurrentUser")){
+            alert("Login First")
+            this.route.navigateByUrl("")
+            }
+
+
+    Parent Child comminication
+
+        db.html      btn-delete()
+        db.ts        delete() {
+        .                this.acno = JSON.parse(localStorage.getItem('CurrentAcno')||'')
+        .                }
+
+        db.html      <app-delete [item]="acno"></app-delete>
+
+        dlt.ts       @Input() item:string|undefined
+        .                 // @Input()  to hold data from dashboard- parent
+        dlt.html    <div class="text-center"> <h3> Are You want to delete {{item}}</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Server
+
+    add json server in project          -  npm install --save json-server
+    to host json in server (run)        -  npx json-server --watch db.json --port 3000
+
+
+
+..(click )
+..for string interpolation (store the value to variable in servce, call it from component.ts and use in html{{interpolation}} )
+
+<a routerLink='/dashboard'> Home</a>
+params -                    (passing id for each item detailedview(amozon eachviewitem))
+        { path: "viewproduct/:id", com... },  //passing params for each DetailedVeiw
+
+
+https://angular.io/guide/architecture
+
+
+registered withdraw

@@ -1,0 +1,111 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{RestItem.photograph1}}" alt="..." />
+            </div>
+            <div class="col-md-6  text-light">
+                <div class="small mt-5">{{RestItem.neighborhood}}</div>
+                <h1 class="display-5 fw-bolder  text-warning">{{RestItem.name}}</h1>
+                <div class="fs-5 mb-2">
+                    <span> Near to:{{RestItem.address}}</span>
+                </div>
+                <p class="lead">{{RestItem.description}}</p>
+
+
+                <div class="d-flex">
+                    <!-- <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
+                        style="max-width: 3rem" />
+                    <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                        <i class="bi-cart-fill me-1"></i>
+                        Time
+                    </button> -->
+
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Opening Hours
+                    </button>
+                    <button type="button" class="btn btn-light ms-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2">
+                        Reveiw
+                    </button>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog ">
+                            <div class="modal-content bg-dark">
+                                <div class="modal-header bg-dark">
+                                    <h5 class="modal-title" id="exampleModalLabel">Coffin cafe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body-dark ">
+                                    <ul class="list-group bg-dark  rounded-0">
+                                        <li class="list-group-item active bg-warning bg-warning text-dark rounded-0"
+                                            aria-current="true">Opening Hours</li>
+                                        <li class="list-group-item">Monday: {{RestItem.operating_hours['Monday']}}</li>
+                                        <li class="list-group-item">Tuesday: {{RestItem.operating_hours['Tuesday']}}
+                                        </li>
+                                        <li class="list-group-item">Wednesday: {{RestItem.operating_hours['Wednesday']}}
+                                        </li>
+                                        <li class="list-group-item">Thurday: {{RestItem.operating_hours['Thursday']}}
+                                        </li>
+                                        <li class="list-group-item">Friday: {{RestItem.operating_hours['Friday']}}</li>
+                                        <li class="list-group-item">Saturday: {{RestItem.operating_hours['Saturday']}}
+                                        </li>
+                                        <li class="list-group-item">Sunday: {{RestItem.operating_hours['Sunday']}}</li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-warning">Save changes</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- --------------------------------- -->
+
+
+
+                    <div class="modal fade w-75" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog  ">
+                            <div class="modal-content bg-dark">
+                                <div class="modal-header bg-dark">
+                                    <h5 class="modal-title" id="exampleModalLabel"> cafe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body-dark">
+                                    <div class="card mb-4" *ngFor="let r of RestItem.reviews">
+                                        <div class="card-header text-dark"> {{r.date}} </div>
+                                        <div class="card-body text-dark">
+
+                                            <h5 class="card-title text-dark"> {{r.name}} </h5>
+                                            <p class="card-text text-dark">Feedback {{r.comments}} </p>
+                                            <p class="card-text text-dark "> <b>Rating: {{r.rating}} </b> </p>
+                                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-warning">Save changes</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
