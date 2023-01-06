@@ -6,46 +6,49 @@
     <div class="bg-mute text-center w-50 mt-5 col-md-6 border rounded-4 px-5">
         <h3 class="mt-2 p-1 text-light">Add Restaurant</h3>
 
-        <form action="" class="mt-2 p-1 ">
+        <form action="" class="mt-2 p-1" (ngSubmit)="AddItem()">
             <div class="row d-flex ">
-                <div col-6 class=" mb-2" style="width: 50%;">
-                    <input type="text" placeholder="Id" class="form-control">
-                    <input type="text " placeholder="Neighborhood" class="form-control mt-2">
-                    <input type="file"  placeholder="" class=" mt-2">
-                   
+                <div col-6 class=" mb-2" style="width: 50%;" ng>
+                    <input [(ngModel)]="id" name="id" type="text" placeholder="Id" class="form-control">
+                    <input [(ngModel)]="neighborhood" name="neighborhood" type="text " placeholder="Neighborhood"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="photograph" name="photograph" type="text" placeholder="Image Link" class="form-control mt-2">
+
                 </div>
 
                 <div class=' col-6 ' style="width: 50%;">
-                    <input type="text " placeholder="Name" class="form-control">
-                    <input type="text" placeholder="Address" class="form-control mt-2">
-                    <input type="text " placeholder="Description" class="form-control mt-2">
-                    
+                    <input [(ngModel)]="name" name="name" type="text " placeholder="Name" class="form-control">
+                    <input [(ngModel)]="address" name="address" type="text" placeholder="Address"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="description" name="description" type="text " placeholder="Description"
+                        class="form-control mt-2">
+
                 </div>
             </div>
 
             <div class="row d-flex ">
                 <div col-6 class="mb-2" style="width: 50%;">
                     <label for="" class="text-light"> Opening Hour</label>
-                    <input type="text" placeholder="Sunday" class="form-control">
-                    <input type="text" placeholder="Monday" class="form-control mt-2">
-                    <input type="text " placeholder="Tuesday" class="form-control mt-2">
-                    <input type="text " placeholder="Wednesday" class="form-control mt-2">
-                    <input type="text " placeholder="Thurday" class="form-control mt-2">
-                    <input type="text " placeholder="Friday" class="form-control mt-2">
-                    <input type="text " placeholder="Saturday" class="form-control mt-2">
+                    <input [(ngModel)]="Sunday" name="sunday" type="time" placeholder="Sunday" class="form-control">
+                    <input [(ngModel)]="Monday" name="monday" type="time" placeholder="Monday" class="form-control mt-2">
+                    <input [(ngModel)]="Tuesday" name="tuesday" type="time" placeholder="Tuesday" class="form-control mt-2">
+                    <input [(ngModel)]="Wednesday" name="wednesday" type="time" placeholder="Wednesday" class="form-control mt-2">
+                    <input [(ngModel)]="Thursday" name="thursday" type="time" placeholder="Thursday" class="form-control mt-2">
+                    <input [(ngModel)]="Friday" name="friday" type="time" placeholder="Friday" class="form-control mt-2">
+                    <input [(ngModel)]="Saturday" name="saturday" type="time" placeholder="Saturday" class="form-control mt-2">
                 </div>
 
                 <div col-6 class="mb-2" style="width: 50%;">
                     <label for="" class="text-light text-start"> Reviews</label>
-                    
-                    <input type="text" placeholder="Name" class="form-control">
-                    <input type="text" placeholder="Date" class="form-control mt-2">
-                    <input type="text " placeholder="Comments" class="form-control mt-2">
-                    <input type="text " placeholder="Rating" class="form-control mt-2">
+
+                    <input [(ngModel)]="rname" name="rname"  type="text" placeholder="Name" class="form-control">
+                    <input  [(ngModel)]="rdate" name="rdate"  type="date" placeholder="Date" class="form-control mt-2">
+                    <input  [(ngModel)]="rcomments" name="rcomments"  type="text " placeholder="Comments" class="form-control mt-2">
+                    <input  [(ngModel)]="rrating" name="rrating"  type="text " placeholder="Rating" class="form-control mt-2">
 
                     <label for="" class="text-light text-start mt-4"> Location</label>
-                    <input type="text" placeholder="Longitute" class="form-control">
-                    <input type="text" placeholder="Latitude" class="form-control mt-2">
+                    <input [(ngModel)]="long" name="long" type="text" placeholder="Longitute" class="form-control">
+                    <input [(ngModel)]="lat" name="lat" type="text" placeholder="Latitude" class="form-control mt-2">
 
                 </div>
 
@@ -54,7 +57,7 @@
 
 
 
-            <button class="btn btn-light">Submit</button>
+            <button type="submit" class="btn btn-light" >  Update </button>
 
         </form>
     </div>

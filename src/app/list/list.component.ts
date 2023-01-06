@@ -20,13 +20,9 @@ export class ListComponent implements OnInit {
         if (result) {
           console.log(result);
           this.RestList=result
-
         }
       }
       )
-
-
-
   }
 
 }

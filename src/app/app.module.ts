@@ -10,6 +10,8 @@ import { ListComponent } from './list/list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
+import { FormsModule } from '@angular/forms';
+import { UpdateRestComponent } from './update-rest/update-rest.component';
 
 
 @NgModule({
@@ -19,13 +21,15 @@ import { AddRestaurantComponent } from './add-restaurant/add-restaurant.componen
     FooterComponent,
     ListComponent,
     ViewproductComponent,
-    AddRestaurantComponent
+    AddRestaurantComponent,
+    UpdateRestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
    
   ],
   providers: [],

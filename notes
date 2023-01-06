@@ -33,7 +33,8 @@
 
         2) Two way binding =>  Data share in both directions (ts-›html and html -› ts)
 
-                1) [(ngModel)] (is library) -          FormsModule => import in (app.modul.ts-imports)
+                1) [(ngModel)] (is library) -          FormsModule => import in (app.modul.ts-imports)   //name
+                        (ngSubmit)=function_name()          (in html <forms>)
         
                 2) Angular Forms
 
@@ -78,6 +79,8 @@
             1. *ngFor           *ngFor="let t of RestList           {{t.name}}
             2. *ngIf
             3. *ngSwitch
+
+            #ngForm
 
             ngclass - Attribute directives- to apply set of style to html
                 inbuilt
@@ -176,6 +179,8 @@ Server
 params -                    (passing id for each item detailedview(amozon eachviewitem))
         { path: "viewproduct/:id", com... },  //passing params for each DetailedVeiw
 
+
+postimage.com   - directlink-
 
 https://angular.io/guide/architecture
 

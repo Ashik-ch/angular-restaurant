@@ -9,6 +9,9 @@ import { ApiServiceService } from '../Service/api-service.service';
 })
 export class ViewproductComponent implements OnInit {
 
+  
+
+
   RestList: any
   RestId: any
   RestItem: any

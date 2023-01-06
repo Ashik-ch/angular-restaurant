@@ -1,0 +1,82 @@
+<app-header></app-header>
+<div class="row" style="margin-top: 75px;">
+
+    <div class="col-md-3"></div>
+
+    <div class="bg-mute text-center w-50 mt-5 col-md-6 border rounded-4 px-5">
+        <h3 class="mt-2 p-1 text-light">Update Restaurant</h3>
+
+        <form  #updateForm="ngForm" class="mt-2 p-1" (ngSubmit)="UpdateItem(updateForm)">
+            <div class="row d-flex ">
+                <div col-6 class=" mb-2" style="width: 50%;" ng>
+
+
+                    <input [(ngModel)]="RestBody.id" name="id" type="text" placeholder="ID" class="form-control">
+                    <input [(ngModel)]="RestBody.neighborhood" name="neighborhood" type="text "
+                        placeholder="neighborhood" class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.photograph1" name="photograph" type="text" placeholder="image"
+                        class="form-control mt-2">
+
+                </div>
+
+                <div class=' col-6 ' style="width: 50%;">
+                    <input [(ngModel)]="RestBody.name" name="name" type="text " placeholder="{{RestBody.name}}"
+                        class="form-control">
+                    <input [(ngModel)]="RestBody.address" name="address" type="text" placeholder="Address"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.description" name="description" type="text " placeholder="Description"
+                        class="form-control mt-2">
+
+                </div>
+            </div>
+
+            <div class="row d-flex ">
+                <div col-6 class="mb-2" style="width: 50%;">
+                    <label class="text-light"> Opening Hour</label>
+                    <input [(ngModel)]="RestBody.operating_hours.Monday" name="monday" type="time" placeholder="Monday"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.operating_hours.tuesday" name="tuesday" type="time"
+                        placeholder="Tuesday" class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.wednesday" name="wednesday" type="time" placeholder="Wednesday"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.thursday" name="thursday" type="time" placeholder="Thursday"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.friday" name="friday" type="time" placeholder="Friday"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.saturday" name="saturday" type="time" placeholder="Saturday"
+                        class="form-control mt-2">
+                    <input [(ngModel)]="RestBody.operating_hours.Sunday" name="sunday" type="time" placeholder="Sunday"
+                        class="form-control mt-2">
+
+                    <label for="" class="text-light text-start mt-4"> Location</label>
+                    <input [(ngModel)]="RestBody.latlng.lng" name="long" type="text" placeholder="Longitute"
+                        class="form-control">
+                    <input [(ngModel)]="RestBody.latlng.lat" name="lat" type="text" placeholder="Latitude"
+                        class="form-control mt-2">
+
+                </div>
+
+                <div col-6 class="mb-2  border rounded-2 pb-2" style="width: 50%;">
+                    <label for="" class="text-light text-start"> Reviews</label>
+                    <div *ngFor="let r of RestBody['reviews'] " class="mt-2  ">
+                        <input [(ngModel)]="r.name" name="rname" type="text" placeholder="Name" class="form-control text-secondary">
+                        <input [(ngModel)]="r.date" name="rdate" type="date" placeholder="Date"
+                            class="form-control mt-2">
+                        <input [(ngModel)]="r.comments" name="rcomments" type="text " placeholder="Comments"
+                            class="form-control mt-2">
+                        <input [(ngModel)]="r.rating" name="rrating" type="text " placeholder="Rating"
+                            class="form-control mt-2">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <button type="submit" class="btn btn-light"> Update Item</button>
+
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+</div>
