@@ -9,12 +9,7 @@ import { ApiServiceService } from '../Service/api-service.service';
 })
 export class UpdateRestComponent implements OnInit {
 
-
-
   RestBody: any
-
-  reviews: any = []
-
   RestId: any
 
   constructor(private ActRoute: ActivatedRoute, private serv: ApiServiceService, private rout: Router) { }
@@ -32,15 +27,10 @@ export class UpdateRestComponent implements OnInit {
       .subscribe((result) => {
         this.RestBody = result
         console.log("restBody", this.RestBody);
-
-
-
       })
-
   }
 
   UpdateItem(updateForm: any) {
-
     let upDatedDb = {
       id: parseInt(updateForm.value.id),
       name: updateForm.value.name,
@@ -68,16 +58,13 @@ export class UpdateRestComponent implements OnInit {
           comments: updateForm.value.rcomments,
           rating: updateForm.value.rrating
         }]
-
-
     }
 
+    // passses two values for currentID, UpdatedDatabase
     this.serv.UpdateRest(this.RestId, upDatedDb,)
       .subscribe(() => {
         alert("Updated Successfully")
         this.rout.navigateByUrl('')
       })
-
-    console.log("DB: ", upDatedDb);
   }
 }

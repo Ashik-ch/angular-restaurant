@@ -8,7 +8,11 @@ import { ApiServiceService } from '../Service/api-service.service';
 })
 export class ListComponent implements OnInit {
 
-  RestList:any
+  RestList: any
+  sdate: any
+
+
+  filterString: any = ''
 
   constructor(private serv: ApiServiceService) { }
   ngOnInit(): void {
@@ -19,10 +23,19 @@ export class ListComponent implements OnInit {
       .subscribe((result) => {
         if (result) {
           console.log(result);
-          this.RestList=result
+          this.RestList = result
         }
-      }
-      )
+      })
+    // date pipe
+    this.sdate = new Date
+
+    // for search
+    this.serv.search.subscribe((data) => {
+      this.filterString = data
+
+
+    })
   }
+
 
 }

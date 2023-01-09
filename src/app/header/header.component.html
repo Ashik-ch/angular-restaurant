@@ -6,10 +6,10 @@
         <i class="fa-regular fa-cup-togo"></i>
     
         <form action="" class="d-flex">
-            <input type="text" class="form-control" placeholder="&#xF002; Search here"
+            <input   (keyup)="searchbar($event)"    type="text" class="form-control" placeholder="&#xF002; Search here"
                 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, FontAwesome">
 
-            <button class=" btn btn-light text-dark ms-3 w-25">Search</button>
+            <button class=" btn btn-light text-dark ms-3 w-25" >Search</button>
 
 
         </form>

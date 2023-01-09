@@ -12,6 +12,9 @@ import { ViewproductComponent } from './viewproduct/viewproduct.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateRestComponent } from './update-rest/update-rest.component';
+import { DeleteRestaurantComponent } from './delete-restaurant/delete-restaurant.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterpipePipe } from './pipe/filterpipe.pipe';
 
 
 @NgModule({
@@ -22,14 +25,17 @@ import { UpdateRestComponent } from './update-rest/update-rest.component';
     ListComponent,
     ViewproductComponent,
     AddRestaurantComponent,
-    UpdateRestComponent
+    UpdateRestComponent,
+    DeleteRestaurantComponent,
+    FilterpipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
    
   ],
   providers: [],

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,17 @@ export class ApiServiceService {
   }
 
 
-  //for updating new item to json api
+  //for updating an item to json api
   UpdateRest(RestId: any, RestBody: any) {
     return this.http.put('http://localhost:3000/restaurants/' + RestId, RestBody)
   }
+
+  // Delete an perticular item
+  DeleteRest(RestId: any) {
+    return this.http.delete('http://localhost:3000/restaurants/' + RestId)
+  }
+
+  // for search option , header and  prodlist communication
+  search = new BehaviorSubject("")
 
 }

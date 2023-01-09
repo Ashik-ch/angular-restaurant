@@ -28,7 +28,7 @@
         
             b) View to Component 
                 b.1)Event binding               - (event_name)="function name"           { (click)=login() }
-                b.2)Event binding using Sevent  - (event_name)="function name ($event)          // iput text in alert 
+                b.2)Event binding using Sevent  - (event_name)="function name ($event)        // iput text in alert 
                 b.3)Event binding using template referencing variable - #variable_name          // ',',    
 
         2) Two way binding =>  Data share in both directions (ts-›html and html -› ts)
@@ -80,13 +80,18 @@
             2. *ngIf
             3. *ngSwitch
 
-            #ngForm
+          
 
             ngclass - Attribute directives- to apply set of style to html
                 inbuilt
 				userdefined
                 
-            ngSubmit - to submit the entire form
+            (ngSubmit)="functionName"   - to submit the entire form
+
+            
+            #ngForm
+            <form #updateForm="ngForm"    (ngSubmit)="UpdateItem(updateForm)">   (.html formtag)
+            this.name <=>   `form`.value.name       (.ts)
 
 
 
@@ -152,9 +157,11 @@
 
 
 
+Pipe  --  to display differnt model than user entered
+    // date pipe    this.sdate = new Date 
+                    <p> Time : {{sdate | date : 'mediumTime'}} </p>      //Datevariable | pipename : 'format'
 
-
-
+    for generating pipe  - ng g p `pipename`
 
 
 
@@ -185,4 +192,6 @@ postimage.com   - directlink-
 https://angular.io/guide/architecture
 
 
-registered withdraw
+for build ( file compressed by removing unnessery thing )    ng build
+
+for host->  https://www.netlify.com/

@@ -9,14 +9,11 @@
         <form  #updateForm="ngForm" class="mt-2 p-1" (ngSubmit)="UpdateItem(updateForm)">
             <div class="row d-flex ">
                 <div col-6 class=" mb-2" style="width: 50%;" ng>
-
-
                     <input [(ngModel)]="RestBody.id" name="id" type="text" placeholder="ID" class="form-control">
                     <input [(ngModel)]="RestBody.neighborhood" name="neighborhood" type="text "
                         placeholder="neighborhood" class="form-control mt-2">
                     <input [(ngModel)]="RestBody.photograph1" name="photograph" type="text" placeholder="image"
                         class="form-control mt-2">
-
                 </div>
 
                 <div class=' col-6 ' style="width: 50%;">
@@ -26,7 +23,6 @@
                         class="form-control mt-2">
                     <input [(ngModel)]="RestBody.description" name="description" type="text " placeholder="Description"
                         class="form-control mt-2">
-
                 </div>
             </div>
 
@@ -68,8 +64,6 @@
                             class="form-control mt-2">
                     </div>
                 </div>
-
-
 
             </div>
 
